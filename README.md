@@ -1,4 +1,4 @@
-# Leetcode_DSA_solution
+# Leetcode_DSA_solution_python
 
 ### In computer science, a data structure is a way to store and organize data.
 ## Array
