@@ -23,3 +23,25 @@
 #### Code:
       def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
           nums1[:] = sorted(nums1[:m] + nums2[:n])
+### 4. Intersection of two Arrays II
+#### Code:
+     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        output = []
+        for x in nums1:
+            if x in nums2:
+                output.append(x)
+                nums2.remove(x)
+        return output
+        
+### 5. Best time to buy and sell stock
+#### Code:
+     def maxProfit(self, prices: List[int]) -> int:
+        n=len(prices)
+        if n<=1:
+            return 0
+        maxprofit=0
+        low=prices[0]
+        for i in range(1,n):
+            low=min(low,prices[i])
+            maxprofit=max(maxprofit, prices[i]-low)
+        return maxprofit
