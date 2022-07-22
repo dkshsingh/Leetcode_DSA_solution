@@ -59,3 +59,20 @@
                 row.append(temp[j]+temp[j+1])
             res.append(row)
         return res 
+        
+### 7. First Unique Character in a string
+#### Code:
+          class Solution:
+          def firstUniqChar(self, s: str) -> int:
+              s_dict = {}
+              for i in range(len(s)):
+                  try:
+                     s_dict[s[i]] += 1
+                  except KeyError:
+                      s_dict[s[i]] = 1
+
+               for i in range(len(s)):
+                   if s_dict[s[i]] == 1:
+                      return i
+
+                return -1
