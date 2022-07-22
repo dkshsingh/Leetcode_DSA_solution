@@ -76,3 +76,15 @@
                       return i
 
                 return -1
+                
+### 8. Ransom Note
+#### Code:
+          class Solution:
+          def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+              m=list(magazine)
+              for i in ransomNote:
+                  if i in m:
+                      m.remove(i)
+                  else:
+                      return False
+              return True
