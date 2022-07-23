@@ -164,3 +164,4 @@
 ### 11. Remove linkedlist element
        Input: head = [1,2,6,3,4,5,6], val = 6
        Output: [1,2,3,4,5]
+<img width="309" alt="lii" src="https://user-images.githubusercontent.com/78050476/180609532-7ee06a91-fb1b-47e0-8b9c-4dfe923f73fa.png">
