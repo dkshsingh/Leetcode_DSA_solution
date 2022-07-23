@@ -88,6 +88,9 @@
         return res 
         
 ### 7. First Unique Character in a string
+      I. Input: s = "leetcode"                      II. input: s="loveleeycode"
+      Output: 0                                         output:2
+
 #### Code:
           class Solution:
           def firstUniqChar(self, s: str) -> int:
@@ -105,6 +108,11 @@
                 return -1
                 
 ### 8. Ransom Note
+      Input: ransomNote = "a", magazine = "b"      Input: ransomNote = "aa", magazine = "aab"
+      Output: false                                Output: true
+
+
+
 #### Code:
           class Solution:
           def canConstruct(self, ransomNote: str, magazine: str) -> bool:
