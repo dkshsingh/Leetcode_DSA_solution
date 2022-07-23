@@ -135,6 +135,10 @@
              else:
                  return False
 ### 10. Linked list cycle
+       Input: head = [3,2,0,-4], pos = 1
+       Output: true
+       Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
 <img width="295" alt="li" src="https://user-images.githubusercontent.com/78050476/180607070-ece56c72-e90c-4b6e-8ab6-0743a9226060.png">
 
 ### code:
