@@ -3,6 +3,8 @@
 ### In computer science, a data structure is a way to store and organize data.
 ## Array
 ### 1. Contains Duplicate
+      I. input: nums=[1,2,3,1]                   II. input: nums=[1,2,3,4]
+         output: true                                output: false
 ####  Code:
      def containsDuplicate(self, nums: List[int]) -> bool:
         numsSet =  set(nums)
@@ -11,6 +13,12 @@
         return True 
         
 ### 2. Two Sum
+       I. Input: nums = [2,7,11,15], target = 9                                      II. Input: nums = [3,2,4], target = 6
+          Output: [0,1]                                                                   Output: [1,2]
+          Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+
+
 #### Code:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)):
