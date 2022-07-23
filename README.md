@@ -73,6 +73,8 @@
 
 ### 6. Pascal's Triangle
 <img width="229" alt="l" src="https://user-images.githubusercontent.com/78050476/179895122-2bab9be6-ba2a-4e17-8de5-a318cdbac9ba.png">
+      Input: numRows = 5
+      Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
 
 #### Code:
       def generate(self, numRows: int) -> List[List[int]]:
