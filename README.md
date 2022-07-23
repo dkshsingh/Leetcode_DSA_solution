@@ -39,7 +39,9 @@
           nums1[:] = sorted(nums1[:m] + nums2[:n])
           
 ### 4. Intersection of two Arrays II
-
+       Example:
+       I. input:  nums1 = [1,2,2,1], nums2 = [2,2]
+          Output: [2,2]
 
 #### Code:
      def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
@@ -51,6 +53,12 @@
         return output
         
 ### 5. Best time to buy and sell stock
+     Example:
+     Input: prices = [7,1,5,3,6,4]
+     Output: 5
+     Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),   profit = 6-1 = 5.
+     Note that buying on day 2 and selling on day 1 is not allowed because  you must buy before you sell.
+     
 #### Code:
      def maxProfit(self, prices: List[int]) -> int:
         n=len(prices)
