@@ -165,3 +165,28 @@
        Input: head = [1,2,6,3,4,5,6], val = 6
        Output: [1,2,3,4,5]
 <img width="309" alt="lii" src="https://user-images.githubusercontent.com/78050476/180609532-7ee06a91-fb1b-47e0-8b9c-4dfe923f73fa.png">
+
+#### code:
+         # Definition for singly-linked list.
+         # class ListNode:
+         # def __init__(self, val=0, next=None):
+         # self.val = val
+         # self.next = next
+          class Solution:
+          def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+          arr = []
+          newList = head
+          newListHead = head
+          while head != None:
+               if head.val != val:            
+                   arr.append(head.val)
+               head = head.next  
+           for i in range(len(arr)):
+           newList.val = arr[i]
+           if(i == len(arr) - 1):
+               newList.next = None
+            else:
+                newList = newList.next
+            if len(arr) == 0:
+                newListHead = None
+            return newListHead
