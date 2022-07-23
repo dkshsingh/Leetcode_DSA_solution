@@ -28,10 +28,19 @@
                     return[i,j]
         
 ### 3. Merge sorted array
+      I.  Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3                                   II. Input: nums1 = [0], m = 0, nums2 = [1], n = 1
+          Output: [1,2,2,3,5,6]                                                                          Output: [1]
+          Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+          The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+     
+     
 #### Code:
       def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
           nums1[:] = sorted(nums1[:m] + nums2[:n])
+          
 ### 4. Intersection of two Arrays II
+
+
 #### Code:
      def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         output = []
