@@ -89,6 +89,9 @@
                       return False
               return True
 ### 9. Valid Anagram
+       I. input: s="anagram" , t="nagram"                 II. input: s = "rat", t = "car"
+          output: true                                        output: false
+
 #### code:
           class Solution:
           def isAnagram(self, s: str, t: str) -> bool:
