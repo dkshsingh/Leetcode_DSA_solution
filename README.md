@@ -190,3 +190,30 @@
             if len(arr) == 0:
                 newListHead = None
             return newListHead
+            
+
+
+### 12. Reverse Linked list
+         Input: head = [1,2,3,4,5]
+         Output: [5,4,3,2,1]
+#### code:
+          # Definition for singly-linked list.
+          # class ListNode:
+          # def __init__(self, val=0, next=None):
+          # self.val = val
+          # self.next = next
+           class Solution:
+           def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+               if head == None:
+                   return None
+
+               p = head
+               while p.next:
+               n = p.next
+               p.next = n.next
+               n.next = head
+               head = n
+            
+           return head
+        
+
