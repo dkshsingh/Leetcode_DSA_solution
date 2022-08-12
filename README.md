@@ -215,5 +215,18 @@
                head = n
             
            return head
-        
+ ### 13. Invert binary tree
+ <img width="285" alt="f" src="https://user-images.githubusercontent.com/78050476/184419344-b2578410-f0c7-4e3b-a4c8-573d31223145.png">
+ 
+ ### code:
+          # Definition for a binary tree node.
+          # class TreeNode:
+          #     def __init__(self, val=0, left=None, right=None):
+          #         self.val = val
+          #         self.left = left
+          #         self.right = right
+          class Solution:
+             def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+                 if root: root.left,root.right = self.invertTree(root.right),self.invertTree(root.left)
+                 return root
 
