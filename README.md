@@ -281,8 +281,32 @@
           }
         };
 
+### 16.Symmetric tree
+<img width="294" alt="s" src="https://user-images.githubusercontent.com/78050476/184423617-0a175abe-c1ab-4dd9-99a0-6a2dc9bcf1b5.png">
 
+### Code:
+         # Definition for a binary tree node.
+         # class TreeNode:
+         #     def __init__(self, val=0, left=None, right=None):
+         #         self.val = val
+         #         self.left = left
+         #         self.right = right
+         class Solution:
+         def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+             return self.is_mirror(root, root)
 
+        def is_mirror(self, root_one, root_two):
+            if not root_one and not root_two:
+                return True
+
+            if not root_one or not root_two:
+                return False
+
+        out_nodes = self.is_mirror(root_one.right, root_two.left)
+        in_nodes = self.is_mirror(root_one.left, root_two.right)
+        equal_values = root_one.val == root_two.val
+
+        return out_nodes and in_nodes and equal_values
 
 
 
