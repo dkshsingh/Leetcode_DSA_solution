@@ -221,12 +221,33 @@
  ### code:
           # Definition for a binary tree node.
           # class TreeNode:
-          #     def __init__(self, val=0, left=None, right=None):
-          #         self.val = val
-          #         self.left = left
-          #         self.right = right
+          # def __init__(self, val=0, left=None, right=None):
+          # self.val = val
+          # self.left = left
+          # self.right = right
           class Solution:
              def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
                  if root: root.left,root.right = self.invertTree(root.right),self.invertTree(root.left)
                  return root
+### 14. Search in a binary search tree
+<img width="305" alt="j" src="https://user-images.githubusercontent.com/78050476/184419954-e4d7dadd-24be-4b8e-a1f4-4a1d9f88b057.png">
 
+### code:
+          # Definition for a binary tree node.
+          # class TreeNode:
+          # def __init__(self, val=0, left=None, right=None):
+          # self.val = val
+          # self.left = left
+          # self.right = right
+         class Solution:
+             def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+                def searchUtil(node: Optional[TreeNode]) -> Optional[TreeNode]:
+                  if not node:
+                      return None
+                  if node.val == val:
+                      return node
+                  elif val < node.val:
+                      return searchUtil(node.left)
+                  elif val > node.val:
+                      return searchUtil(node.right)
+                  return searchUtil(root)
