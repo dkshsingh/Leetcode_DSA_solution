@@ -251,3 +251,39 @@
                   elif val > node.val:
                       return searchUtil(node.right)
                   return searchUtil(root)
+                  
+### 15. Maximum depth of binary search tree(C++ solution)
+<img width="302" alt="g" src="https://user-images.githubusercontent.com/78050476/184422714-ae0db892-d152-4b0d-ba48-e07e686ffa5a.png">
+
+    II.  Input: root = [1,null,2]
+         Output: 2
+
+### Code: (C++)
+          /**
+          * Definition for a binary tree node.
+          * struct TreeNode {
+          *     int val;
+          *     TreeNode *left;
+          *     TreeNode *right;
+          *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+          *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+          *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+          * };
+          */
+          class Solution {
+          public:
+              int maxDepth(TreeNode* root) {
+                  if(root == NULL)
+                      return 0;
+        
+             return 1 + max(maxDepth(root->left), maxDepth(root->right));
+        
+          }
+        };
+
+
+
+
+
+
+
