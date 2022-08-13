@@ -1,7 +1,7 @@
 # Leetcode_DSA_solution_python
 
 ### In computer science, a data structure is a way to store and organize data.
-## Array
+
 ### 1. Contains Duplicate
       I. input: nums=[1,2,3,1]                   II. input: nums=[1,2,3,4]
          output: true                                output: false
@@ -361,9 +361,57 @@
                     root.left = self.insertIntoBST(root.left, val);
                 return(root)
 
+### 19. Implement Queue using stacks
+     Input
+     ["MyQueue", "push", "push", "peek", "pop", "empty"]
+     [[], [1], [2], [], [], []]
+     Output
+     [null, null, null, 1, 1, false]
+
+     Explanation
+     MyQueue myQueue = new MyQueue();
+     myQueue.push(1); // queue is: [1]
+     myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+     myQueue.peek(); // return 1
+     myQueue.pop(); // return 1, queue is [2]
+     myQueue.empty(); // return false
+
+### Code:
+         class MyQueue:
+
+    def __init__(self):
+        self.stPush = []
+        self.stPop = []
+        
+
+    def push(self, x: int) -> None:
+        self.stPush.append(x)
+        
+        
+
+    def pop(self) -> int:
+        self.peek()
+        return self.stPop.pop()
+        
+
+    def peek(self) -> int:
+        if len(self.stPop) == 0:
+            while self.stPush:
+                self.stPop.append(self.stPush.pop())
+        return self.stPop[-1]
+        
+
+    def empty(self) -> bool:
+        return len(self.stPop) + len(self.stPush) == 0
+        
 
 
-
+    # Your MyQueue object will be instantiated and called as such:
+    # obj = MyQueue()
+    # obj.push(x)
+    # param_2 = obj.pop()
+    # param_3 = obj.peek()
+    # param_4 = obj.empty()
 
 
 
