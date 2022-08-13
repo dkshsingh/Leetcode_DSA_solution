@@ -307,7 +307,36 @@
         equal_values = root_one.val == root_two.val
 
         return out_nodes and in_nodes and equal_values
+### 17. Validate binary tree 
+<img width="302" alt="d" src="https://user-images.githubusercontent.com/78050476/184502648-62b8051f-0338-4756-aad1-800954948718.png">
 
+      II. Input: root = [5,1,4,null,null,3,6]
+          Output: false
+          Explanation: The root node's value is 5 but its right child's value is 4.
+    
+### Code:
+         # Definition for a binary tree node.
+         # class TreeNode:
+         #     def __init__(self, val=0, left=None, right=None):
+         #         self.val = val
+         #         self.left = left
+         #         self.right = right
+         class Solution:
+             def isValidBST(self, root: Optional[TreeNode]) -> bool:
+                 output = []
+                 self.inOrder(root, output)
+        
+            for i in range(1, len(output)):
+                if output[i-1] >= output[i]:
+                    return False
 
+            return True
 
+            def inOrder(self, root, output):
+                if root is None:
+                    return
+        
+            self.inOrder(root.left, output)
+            output.append(root.val)
+            self.inOrder(root.right, output)
 
