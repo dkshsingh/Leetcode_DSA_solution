@@ -287,10 +287,10 @@
 ### Code:
          # Definition for a binary tree node.
          # class TreeNode:
-         #     def __init__(self, val=0, left=None, right=None):
-         #         self.val = val
-         #         self.left = left
-         #         self.right = right
+         # def __init__(self, val=0, left=None, right=None):
+         # self.val = val
+         # self.left = left
+         # self.right = right
          class Solution:
          def isSymmetric(self, root: Optional[TreeNode]) -> bool:
              return self.is_mirror(root, root)
@@ -317,10 +317,10 @@
 ### Code:
          # Definition for a binary tree node.
          # class TreeNode:
-         #     def __init__(self, val=0, left=None, right=None):
-         #         self.val = val
-         #         self.left = left
-         #         self.right = right
+         # def __init__(self, val=0, left=None, right=None):
+         # self.val = val
+         # self.left = left
+         # self.right = right
          class Solution:
              def isValidBST(self, root: Optional[TreeNode]) -> bool:
                  output = []
@@ -339,4 +339,33 @@
             self.inOrder(root.left, output)
             output.append(root.val)
             self.inOrder(root.right, output)
+
+### 18. Insert in to a binary search tree
+<img width="249" alt="f" src="https://user-images.githubusercontent.com/78050476/184502819-a31fed47-2b53-43ea-8ec9-ad5b19528fa0.png">
+      
+      II. Input: root = [40,20,60,10,30,50,70], val = 25
+          Output: [40,20,60,10,30,50,70,null,null,25]
+### Code:
+        # Definition for a binary tree node.
+        # class TreeNode:
+        # def __init__(self, val=0, left=None, right=None):
+        # self.val = val
+        # self.left = left
+        # self.right = right
+        class Solution:
+            def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+                if(root == None):
+                    return TreeNode(val);
+                if(root.val < val): root.right = self.insertIntoBST(root.right, val);
+                else:
+                    root.left = self.insertIntoBST(root.left, val);
+                return(root)
+
+
+
+
+
+
+
+
 
