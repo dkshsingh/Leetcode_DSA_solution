@@ -414,6 +414,54 @@
     # param_4 = obj.empty()
 
 
+### 20. Remove duplicate from sorted list
+       I. Input: head = [1,1,2]
+          Output: [1,2]
+        
+       II. Input: head = [1,1,2,3,3]
+           Output: [1,2,3]
+           
+           
+### Code:
+         class Solution {
+         public:
+             ListNode* deleteDuplicates(ListNode* head) {
+                     ListNode* cur_node = head;
+                 while (cur_node && cur_node->next) {
+                     ListNode* next_node = cur_node->next;
+                     if (cur_node->val == next_node->val)
+                         cur_node->next = next_node->next;
+                     else
+                         cur_node = next_node;
+                      }
+                 return head;
+                 }
+              };
 
-
-
+### 21. Valid parenthsis
+         I. Input: s = "()"
+            Output: true
+         
+         II.Input: s = "()[]{}"
+            Output: true
+         III. Input: s = "(]"
+              Output: false   
+### Code:
+          class Solution {
+          public:
+              bool isValid(string s) {
+	        stack<char> c;
+    	            for (int i = 0; i<s.size(); i++)
+    	            {	
+    		          if (c.empty() || (((c.top() + 0) != (s[i] - 1)) && ((c.top() + 0) != (s[i] - 2))))
+    			        c.push(s[i]);
+    		          else c.pop();
+    	             }
+    	             return c.empty();
+                }
+              };
+            
+            
+            
+            
+            
