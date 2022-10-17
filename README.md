@@ -479,5 +479,13 @@
 
             return ans if ans != inf else -1
             
-            
-            
+  ### 23. Pangram
+       Input: asdfghjklzxcvbnmqwertyuiop
+       output: true
+       
+       Input: Leetcode
+       output: False
+ ### code: 
+    class Solution:
+        def checkIfPangram(self, sentence: str) -> bool:
+            return len(set(sentence)) == 26
