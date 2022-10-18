@@ -489,3 +489,27 @@
     class Solution:
         def checkIfPangram(self, sentence: str) -> bool:
             return len(set(sentence)) == 26
+### 24. Count and say
+      Input: n = 1
+      Output: "1"
+      Explanation: This is the base case.
+    
+      Input: n = 4
+      Output: "1211"
+      Explanation:
+      countAndSay(1) = "1"
+      countAndSay(2) = say "1" = one 1 = "11"
+      countAndSay(3) = say "11" = two 1's = "21"
+      countAndSay(4) = say "21" = one 2 + one 1 = "12" + "11" = "1211"
+      
+ ### Code:
+      class Solution:
+          def countAndSay(self, n: int) -> str:
+              s = '1'
+              for _ in range(n - 1):
+                  s = re.sub(r'(.)\1*', lambda m: str(len(m.group(0))) + m.group(1), s)
+              return s
+      
+      
+      
+      
