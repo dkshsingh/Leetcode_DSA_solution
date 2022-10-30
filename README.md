@@ -540,7 +540,7 @@
           Input: strs = ["eat","tea","tan","ate","nat","bat"]
           Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
          
-	  Input: strs = [""]
+	   Input: strs = [""]
           Output: [[""]]
 ### Code:
         class Solution:
@@ -556,3 +556,19 @@
             	strs_table[sorted_string].append(string)
 
         	return list(strs_table.values())
+### 27. Set mismatch
+         Input: nums = [1,2,2,4]
+         Output: [2,3]
+         Input: nums = [1,1]
+         Output: [1,2]
+### Code:
+    class Solution:
+    	def findErrorNums(self, nums: List[int]) -> List[int]:
+            return [sum(nums) - sum(set(nums)), sum(range(1, len(nums)+1)) - sum(set(nums))]
+
+
+
+
+
+
+
