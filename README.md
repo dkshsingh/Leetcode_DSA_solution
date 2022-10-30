@@ -563,12 +563,26 @@
          Output: [1,2]
 ### Code:
     class Solution:
-    	def findErrorNums(self, nums: List[int]) -> List[int]:
+        def findErrorNums(self, nums: List[int]) -> List[int]:
             return [sum(nums) - sum(set(nums)), sum(range(1, len(nums)+1)) - sum(set(nums))]
 
-
-
-
+### 28. Longest common prefix
+       Input: strs = ["flower","flow","flight"]
+       Output: "fl"
+       Input: strs = ["dog","racecar","car"]
+       Output: ""
+       Explanation: There is no common prefix among the input strings.
+### Code:
+    class Solution:
+        def longestCommonPrefix(self, strs: List[str]) -> str:
+            l = list(zip(*strs))
+            prefix = ""
+            for i in l:
+                if len(set(i))==1:
+                    prefix += i[0]
+                else:
+                    break
+            return prefix
 
 
 
